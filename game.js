@@ -35,11 +35,37 @@ function keysReleased(e) {
     keys[e.keyCode] = false;
 }
 
-
-function player() {
-  this.x = parseInt(localStorage.getItem("x")) || 0;
-  this.y = parseInt(localStorage.getItem("y")) || 0;
+function coonnection() {
+    constructor(weight) {
+        this.weight = 0;
+    } 
 }
+
+function nueron() {
+    constructor(bias) {
+        this.bias = bias;
+    }
+}
+
+function layer() {
+    this.nuerons = [];
+    constructor(nuerons, nextLayer) {
+        for(let i = 0; i < nuerons; i++) {
+            this.nuerons.push(new nueron(-0.5 + Math.random(), nextLayer));
+        }
+    }
+}
+
+function network() {
+    this.layers = [];
+    constructor(layers) {
+        for(let i = 0; i < layers.length; i++) {
+            layers.push(new layer(layers[i], layers[i + 1]));
+        }
+    }
+}
+
+let sampleNetwork = new network([2, 2]);
 
 setInterval(function() {
   ctx.fillStyle = "rgb(200, 200, 200)";
