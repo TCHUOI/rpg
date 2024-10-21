@@ -1,4 +1,7 @@
 function player() {
-    this.x = parseInt(localStorage.getItem("x")) || 0;
-    this.y = parseInt(localStorage.getItem("y")) || 0;
+    this.pos = new GameVector(parseInt(localStorage.getItem("x")) || 0, parseInt(localStorage.getItem("y")) || 0);
+
+    this.run = function() {
+        ctx.ellipse(this.x, this.y, 0, 0);
+    }
 }
