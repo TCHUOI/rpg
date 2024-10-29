@@ -1,4 +1,4 @@
-let player = new player();
+let player = new Player();
 
 setInterval(function() {
     ctx.fillStyle = "rgb(200, 200, 200)";
