@@ -2,6 +2,6 @@ function Player() {
     this.pos = new GameVector(parseInt(localStorage.getItem("x")) || 0, parseInt(localStorage.getItem("y")) || 0);
 
     this.run = function() {
-        ctx.ellipse(this.x, this.y, 0, 0);
+        ctx.ellipse(this.pos.camX, this.pos.camX, 50, 50);
     }
 }
