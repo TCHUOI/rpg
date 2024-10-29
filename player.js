@@ -1,4 +1,4 @@
-function player() {
+function Player() {
     this.pos = new GameVector(parseInt(localStorage.getItem("x")) || 0, parseInt(localStorage.getItem("y")) || 0);
 
     this.run = function() {
